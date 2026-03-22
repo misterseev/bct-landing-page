@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { SITE_NAME_SHORT } from "@/lib/routes"
 
 const requirements = [
-  "ມີໃບຢັ້ງຢືນການສຳເລັດມັດທະຍົມປາຍ (ມ.6) ຫຼື ທຽບເທົ່າ",
+  "ມີໃບຢັ້ງຢືນການສຳເລັດມັດທະຍົມປາຍ (ມ.7) ຫຼື ທຽບເທົ່າ",
   "ສຳເນົາບັດປະຈຳຕົວ ຫຼື ຫນັງສືຜ່ານແດນ",
   "ຮູບຖ່າຍຂະໜາດຫນັງສືຜ່ານແດນ ຈຳນວນ 2 ຮູບ (ຖ່າຍບໍ່ເກີນ 6 ເດືອນ)",
   "ແບບຟອມສະໝັກທີ່ກົງກັບຂໍ້ມູນຈິງ",
@@ -41,7 +41,7 @@ const steps = [
 ]
 
 const programs = [
-  "ວິສາວະວິທາຄອມພິວເຕີ ແລະ ວິທະຍາການ",
+  "ວິທະຍາສາດ ຄອມພິວເຕີ ແລະ ວິສະວະກຳຊອບແວ",
   "ພາສາອັງກິດ",
   "ການເມືອງ ແລະ ສັງຄົມວິທະຍາ",
 ]
@@ -152,7 +152,7 @@ export default function Admissions() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewport}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden shadow-sm"
+            className="rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden"
           >
             <div className="px-8 py-6 border-b border-[#E2E8F0] bg-[rgba(242,13,73,0.03)]">
               <h3 className="font-bold text-[#0F172A] text-xl">ແບບຟອມສະໝັກຮຽນ</h3>
@@ -231,7 +231,7 @@ export default function Admissions() {
                     className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] focus:outline-none focus:border-[#e61435] focus:ring-1 focus:ring-[#e61435] transition-colors text-sm appearance-none"
                   >
                     <option value="" className="bg-white">
-                      ກະລຸນາເລືອກສາຂາ…
+                    --ເລືອກ--
                     </option>
                     {programs.map((p) => (
                       <option key={p} value={p} className="bg-white">
@@ -255,7 +255,7 @@ export default function Admissions() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-4 bg-[#e61435] text-white font-bold text-base rounded-xl hover:bg-[#c40038] transition-all duration-200 shadow-lg shadow-[rgba(242,13,73,0.2)] hover:shadow-[rgba(242,13,73,0.35)] flex items-center justify-center gap-2"
+                  className="w-full cursor-pointer py-4 bg-[#e61435] text-white font-bold text-base rounded-xl hover:bg-[#c40038] transition-all duration-200  shadow-[rgba(242,13,73,0.2)] hover:shadow-[rgba(242,13,73,0.35)] flex items-center justify-center gap-2"
                 >
                   <Send size={18} />
                   ສົ່ງແບບຟອມສະໝັກ

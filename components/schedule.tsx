@@ -35,13 +35,13 @@ export default function Schedule() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-[#e61435] font-semibold text-sm tracking-widest">
+          <span className="text-[#e61435] font-semibold text-sm">
             ຕາຕະລາງຮຽນ
           </span>
           <h2 className="font-black text-4xl md:text-5xl text-[#0F172A] mt-3 text-balance">
             ເວລາຮຽນ-ສອນ
           </h2>
-          <p className="text-[#64748B] mt-4 max-w-xl mx-auto text-balance">
+          <p className="text-[#64748B] mt-4 max-w-xl mx-auto">
             {SITE_NAME_SHORT} ດຳເນີນການຮຽນ-ການສອນຕັ້ງແຕ່ວັນຈັນຫາວັນສຸກ ໂດຍມີສອງຮອບເວລາ ເພື່ອອຳນວຍຄວາມສະດວກໃຫ້ນັກສຶກສາ.
           </p>
         </motion.div>
@@ -116,7 +116,7 @@ export default function Schedule() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewport}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-2 rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden shadow-sm"
+            className="lg:col-span-2 rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden"
           >
             <div className="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between">
               <div>
@@ -124,7 +124,7 @@ export default function Schedule() {
                 <div className="text-[#64748B] text-xs mt-0.5">ຮອບເຊົ້າ — ຕົວຢ່າງຕາຕະລາງ</div>
               </div>
               <div className="px-3 py-1 rounded-full bg-[rgba(242,13,73,0.07)] border border-[rgba(242,13,73,0.15)] text-[#e61435] text-xs font-semibold">
-                ຈັນ – ສຸກ
+                ວັນຈັນ – ວັນສຸກ
               </div>
             </div>
 
@@ -148,7 +148,7 @@ export default function Schedule() {
                 {days.map((day) => (
                   <div
                     key={day}
-                    className="px-2 py-3 text-center text-[#0F172A] text-xs leading-snug"
+                    className="px-2 py-3 text-left text-[#0F172A] text-xs leading-snug"
                   >
                     {slot.subject}
                   </div>

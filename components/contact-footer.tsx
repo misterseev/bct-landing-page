@@ -13,7 +13,6 @@ const quickLinks = [
   { label: "ຮັບສະໝັກຮຽນ", href: HOME.admissions },
   { label: "ຂ່າວສານ", href: ROUTES.notifications },
   { label: "ກິດຈະກຳ ແລະ ທ່ອງທ່ຽວ", href: ROUTES.activitiesTravel },
-  { label: "ຕິດຕໍ່", href: HOME.contact },
 ]
 
 const contactItems = [
@@ -64,8 +63,8 @@ export default function ContactFooter() {
             <h2 className="font-black text-4xl md:text-5xl text-[#0F172A] mt-3 text-balance">
               ຂໍ້ມູນຕິດຕໍ່ພວກເຮົາ
             </h2>
-            <p className="text-[#64748B] mt-4 max-w-2xl mx-auto text-balance leading-relaxed">
-              ຫາກມີຂໍ້ສົງໄສ ຫຼື ຕ້ອງການຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບຫຼັກສູດ, ກະລຸນາຕິດຕໍ່ພວກເຮົາ — ພະນັກງານຮັບສະໝັກຍິນດີໃຫ້ຄຳແນະນຳອັນສຸພາບ
+            <p className=" mt-4 max-w-2xl mx-auto leading-relaxed font-semibold">
+              ຫາກມີຂໍ້ສົງໄສ ຫຼື ຕ້ອງການຂໍ້ມູນເພີ່ມເຕີມກ່ຽວກັບຫຼັກສູດ, ກະລຸນາຕິດຕໍ່ພວກເຮົາ ພະນັກງານຮັບສະໝັກຍິນດີໃຫ້ຄຳແນະນຳອັນສຸພາບ
             </p>
           </motion.div>
 
@@ -233,7 +232,7 @@ export default function ContactFooter() {
               </h4>
               <ul className="space-y-2">
                 {[
-                  "ວິສາວະວິທາຄອມພິວເຕີ ແລະ ວິທະຍາການ",
+                  "ວິທະຍາສາດຄອມພິວເຕີ ແລະ ວິສະວະກຳຊອບແວ",
                   "ພາສາອັງກິດ",
                   "ການເມືອງ ແລະ ສັງຄົມວິທະຍາ",
                 ].map((p) => (
@@ -247,7 +246,7 @@ export default function ContactFooter() {
                   </li>
                 ))}
                 <li className="pt-4">
-                  <div className="text-[#94A3B8] text-xs">ລະດັບທີ່ສອນ</div>
+                  <div className="text-[#94A3B8] text-xs">ລະດັບການສຶກສາ</div>
                   <div className="text-[#D97706] font-semibold text-sm mt-1">
                     ປະລິນຍາຕີ້ຊັ້ນສູງ · ຊັ້ນສູງ
                   </div>

@@ -65,7 +65,7 @@ export default function NotificationsPage() {
               <li key={item.id}>
                 <Link
                   href={`/notifications/${item.id}`}
-                  className="group block rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden shadow-sm transition-all hover:border-[#e61435]/25 hover:shadow-md"
+                  className="group block rounded-sm border border-[#E2E8F0] bg-white overflow-hidden transition-all hover:border-[#e61435]/25 "
                 >
                   <div className="flex flex-col sm:flex-row sm:items-stretch">
                     <div className="relative aspect-16/10 sm:aspect-auto sm:w-[min(42%,280px)] shrink-0 bg-[#EEF2F6]">

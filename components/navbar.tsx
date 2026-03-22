@@ -121,7 +121,7 @@ export default function Navbar() {
           </div>
           <div className="hidden sm:block">
             <div
-              className={`font-bold text-sm leading-tight transition-colors ${
+              className={`font-bold text-base leading-tight transition-colors ${
                 navOnLightBg ? "text-gray-700" : "text-white"
               }`}
             >
