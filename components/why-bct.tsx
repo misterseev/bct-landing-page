@@ -67,7 +67,7 @@ export default function WhyBCT() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16"
         >
           <div>
-            <span className="text-[#D97706] font-semibold text-sm tracking-widest">
+            <span className="text-[#e61435] font-semibold text-sm">
               ເປັນຫຍັງຄວນເລືອກພວກເຮົາ
             </span>
             <h2 className="font-black text-4xl md:text-5xl text-[#0F172A] mt-3 text-balance max-w-lg">
@@ -91,7 +91,7 @@ export default function WhyBCT() {
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="relative p-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#e61435] transition-all duration-300 hover:-translate-y-1 group overflow-hidden hover:shadow-md"
               >
-                <span className="absolute top-4 right-6 font-black text-5xl text-[rgba(242,13,73,0.05)] select-none">
+                <span className="absolute top-4 right-6 font-black text-5xl text-[rgba(242,13,74,0.13)] select-none">
                   0{index + 1}
                 </span>
 

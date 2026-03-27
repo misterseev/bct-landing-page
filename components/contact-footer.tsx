@@ -4,6 +4,16 @@ import { MapPin, Phone, Mail, Facebook, Youtube, Globe } from "lucide-react"
 import { motion } from "framer-motion"
 import { AnimatedDotPattern } from "./animated-dot-pattern"
 import { HOME, ROUTES, SITE_NAME_SHORT } from "@/lib/routes"
+import dynamic from "next/dynamic"
+
+const BctMapDynamic = dynamic(() => import("./bct-map"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center bg-[#F8FAFC]">
+      <div className="text-[#64748B] text-sm">ກຳລັງໂຫຼດແຜນທີ່...</div>
+    </div>
+  ),
+})
 
 const quickLinks = [
   { label: "ກ່ຽວກັບພວກເຮົາ", href: HOME.about },
@@ -137,37 +147,9 @@ export default function ContactFooter() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] overflow-hidden aspect-4/3 flex flex-col items-center justify-center gap-4 relative"
+              className=" rounded-md overflow-hidden aspect-4/3 relative"
             >
-              <div
-                className="absolute inset-0 opacity-[0.03]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(rgba(242,13,73,1) 1px, transparent 1px), linear-gradient(90deg, rgba(242,13,73,1) 1px, transparent 1px)",
-                  backgroundSize: "30px 30px",
-                }}
-                aria-hidden="true"
-              />
-              <div className="relative z-10 text-center px-8">
-                <div className="w-14 h-14 rounded-2xl bg-[rgba(242,13,73,0.07)] flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="text-[#e61435]" size={28} />
-                </div>
-                <div className="font-bold text-[#0F172A] text-lg mb-2">
-                  {SITE_NAME_SHORT}, ນະຄອນຫຼວງວຽງຈັນ
-                </div>
-                <p className="text-[#64748B] text-sm leading-relaxed mb-4">
-                  ຍິນດີຕ້ອນຮັບທ່ານເຂົ້າເຢີມຊົມສະຖານທີ່ຕາມການນັດໝາຍ; ລາຍລະອຽດທີ່ຕັ້ງຈະແຈ້ງໃຫ້ຊາບເມື່ອສອບຖາມການຮັບສະໝັກ
-                </p>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[rgba(242,13,73,0.07)] border border-[rgba(242,13,73,0.2)] text-[#e61435] text-sm font-semibold rounded-lg hover:bg-[rgba(242,13,73,0.12)] transition-colors"
-                >
-                  <MapPin size={14} />
-                  ເປີດແຜນທີ່ອອນໄລນ໌
-                </a>
-              </div>
+              <BctMapDynamic />
             </motion.div>
           </div>
         </div>

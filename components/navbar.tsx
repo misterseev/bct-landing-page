@@ -65,6 +65,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [megaOpenHref, setMegaOpenHref] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
+  const [hoveredChild, setHoveredChild] = useState<string | null>(null)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const openMega = useCallback((href: string) => {
@@ -115,7 +116,12 @@ export default function Navbar() {
       onMouseLeave={scheduleCloseMega}
     >
       <nav className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
-        <a href="/" className="flex items-center gap-3 group shrink-0">
+        <motion.a
+          href="/"
+          className="flex items-center gap-3 group shrink-0"
+          whileHover={{ scale: 1.04 }}
+          transition={{ type: "spring", stiffness: 400, damping: 20 }}
+        >
           <div className="w-14 h-10 rounded-lg bg-[#e61435] flex items-center justify-center">
             <span className="font-black text-white text-sm leading-none">BCT</span>
           </div>
@@ -131,24 +137,26 @@ export default function Navbar() {
               ເພື່ອການສຶກສາດ້ານໄອທີ
             </div>
           </div>
-        </a>
+        </motion.a>
 
         <ul className="hidden md:flex items-center gap-3 flex-1 justify-end min-w-0">
           {navLinks.map((link) => {
             const hasChildren = Boolean(link.children?.length)
             if (hasChildren) {
               return (
-                <li
+                <motion.li
                   key={link.href}
                   className="relative"
                   onMouseEnter={() => openMega(link.href)}
                   onMouseLeave={scheduleCloseMega}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
                   <button
                     type="button"
                     aria-expanded={megaOpenHref === link.href}
                     aria-haspopup="true"
-                    className={`flex items-center gap-1 px-3 py-2 text-sm font-bold rounded-md transition-colors ${navTextClass} ${navHoverClass} ${
+                    className={`flex items-center cursor-pointer gap-1 px-3 py-2 text-sm font-bold rounded-md transition-colors hover:text-[#e61435] ${navTextClass} ${navHoverClass} ${
                       megaOpenHref === link.href ? "text-[#e61435]" : ""
                     }`}
                   >
@@ -158,18 +166,23 @@ export default function Navbar() {
                       aria-hidden
                     />
                   </button>
-                </li>
+                </motion.li>
               )
             }
             return (
-              <li key={link.href} onMouseEnter={() => setMegaOpenHref(null)}>
+              <motion.li
+                key={link.href}
+                onMouseEnter={() => setMegaOpenHref(null)}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              >
                 <a
                   href={link.href}
-                  className={`block px-3 py-2 text-sm font-bold rounded-md transition-colors ${navTextClass} ${navHoverClass}`}
+                  className={`block px-3 py-2 text-sm font-bold rounded-md transition-colors hover:text-[#e61435] ${navTextClass} ${navHoverClass}`}
                 >
                   {link.label}
                 </a>
-              </li>
+              </motion.li>
             )
           })}
         </ul>
@@ -194,38 +207,56 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="hidden md:block absolute left-0 right-0 top-full border-t border-[#E2E8F0] bg-white shadow-[0_20px_40px_-12px_rgba(15,23,42,0.12)]"
+            className="hidden md:block absolute left-0 right-0 top-full border-t border-[#E2E8F0] bg-white shadow-sm"
             onMouseEnter={cancelCloseMega}
             onMouseLeave={scheduleCloseMega}
           >
             <div className="w-full max-w-[100vw] mx-auto px-4 md:px-8 lg:px-12 py-8 md:py-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#e61435] mb-2">
-                ຂ່າວສານ ແລະ ຂໍ້ມູນ
-              </p>
-              <h2 className="text-lg md:text-xl font-bold text-[#0F172A] mb-6 md:mb-8 max-w-3xl">
-                ເລືອກຫົວຂໍ້ທີ່ຕ້ອງການ — ອ່ານລາຍລະອຽດແຕ່ລະພາກສ່ວນ
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5"
+                onMouseLeave={() => setHoveredChild(null)}
+              >
                 {activeMega.children.map((child) => {
                   const Icon = child.icon ?? Newspaper
+                  const isHovered = hoveredChild === child.href
                   return (
                     <a
                       key={child.href}
                       href={child.href}
-                      className="group flex flex-col rounded-xl p-5 transition-all border border-white hover:border-[#e61435]/40 hover:bg-white hover:-translate-y-0.5"
+                      className="group relative flex flex-col rounded-xl p-5 border border-transparent"
+                      onMouseEnter={() => setHoveredChild(child.href)}
                     >
-                      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-[rgba(242,13,73,0.08)] text-[#e61435] transition-colors group-hover:bg-[#e61435] group-hover:text-white">
+                      {isHovered && (
+                        <motion.div
+                          layoutId="mega-card-highlight"
+                          className="absolute inset-0 rounded-xl border border-[#e61435]/50 bg-[rgba(242,13,74,0.02)]"
+                          transition={{ type: "spring", stiffness: 350, damping: 28, mass: 0.6 }}
+                        />
+                      )}
+                      <motion.div
+                        className="relative mb-3 flex h-10 w-10 items-center justify-center rounded-lg"
+                        animate={isHovered ? { backgroundColor: "#e61435", color: "#ffffff" } : { backgroundColor: "rgba(242,13,73,0.08)", color: "#e61435" }}
+                        transition={{ duration: 0.2 }}
+                      >
                         <Icon className="h-5 w-5" aria-hidden />
-                      </div>
-                      <span className="font-bold text-[#0F172A] text-sm leading-snug group-hover:text-[#e61435] transition-colors">
+                      </motion.div>
+                      <motion.span
+                        className="relative font-bold text-sm leading-snug"
+                        animate={{ color: isHovered ? "#e61435" : "#0F172A" }}
+                        transition={{ duration: 0.15 }}
+                      >
                         {child.label}
-                      </span>
-                      <p className="mt-2 text-xs md:text-sm text-[#64748B] leading-relaxed line-clamp-4">
+                      </motion.span>
+                      <p className="relative mt-2 text-xs md:text-sm text-[#64748B] leading-relaxed line-clamp-4">
                         {child.description}
                       </p>
-                      <span className="mt-3 text-xs font-semibold text-[#e61435] opacity-0 group-hover:opacity-100 transition-opacity">
+                      <motion.span
+                        className="relative mt-3 text-xs font-semibold text-[#e61435]"
+                        animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 4 }}
+                        transition={{ duration: 0.2 }}
+                      >
                         ເບິ່ງເພີ່ມ →
-                      </span>
+                      </motion.span>
                     </a>
                   )
                 })}
