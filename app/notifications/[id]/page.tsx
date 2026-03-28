@@ -39,19 +39,6 @@ export default async function NotificationDetailPage({ params }: Props) {
       <Navbar />
 
       <div className="pt-16 md:pt-20">
-        {/* <header className="relative overflow-hidden border-b border-[#E2E8F0] bg-white">
-          <AnimatedDotPattern gap={20} dotOpacity={0.14} durationSec={14} />
-          <div className="relative max-w-3xl mx-auto px-4 md:px-8 py-8 md:py-10">
-            <Link
-              href="/notifications"
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate hover:text-brand transition-colors"
-            >
-              <ArrowLeft className="h-4 w-4" aria-hidden />
-              ກັບໜ້າລາຍການຂ່າວ
-            </Link>
-          </div>
-        </header> */}
-
         <article className="pb-16 md:pb-20">
           {/* ຮູບເຕັມຄວາມກວ້າງຈໍ (edge-to-edge) */}
           <div className="relative w-full min-h-50 aspect-21/9 bg-[#E2E8F0] md:min-h-70 md:aspect-3/1">
@@ -67,7 +54,7 @@ export default async function NotificationDetailPage({ params }: Props) {
 
           {/* ເນື້ອຫາຂ່າວ — ຄືເກົ່າ: ກ້ອງຂາວ, ຂອບ, ຕົວໜັງສືເກົ່າ */}
           <div className="max-w-3xl mx-auto px-4 md:px-8 -mt-2 md:-mt-4">
-            <div className="overflow-hidden rounded-2xl  bg-white shadow-sm">
+            <div className="overflow-hidden bg-white border-2 border-brand/20">
               <div className="p-6 md:p-10">
                 <div className="flex flex-wrap items-center gap-2 text-sm text-slate mb-4">
                   <Calendar className="h-4 w-4 shrink-0 text-brand" aria-hidden />
@@ -88,7 +75,7 @@ export default async function NotificationDetailPage({ params }: Props) {
           <div className="max-w-3xl mx-auto px-4 md:px-8 mt-10 text-center">
             <Link
               href="/notifications"
-              className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold text-navy shadow-sm hover:border-brand/30 hover:text-brand transition-colors"
+              className="w-full inline-flex items-center justify-center border bg-white px-6 py-3 text-sm font-semibold text-navy hover:border-brand/30 hover:text-brand transition-colors"
             >
               <ArrowLeft className="h-4 w-4 mr-3" aria-hidden /> ກັບຄືນເພື່ອເບິ່ງຂ່າວອື່ນໆ
             </Link>

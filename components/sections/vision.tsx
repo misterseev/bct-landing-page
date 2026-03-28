@@ -46,10 +46,10 @@ export default function Vision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewport}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative p-8 rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden group hover:border-brand transition-all duration-300 hover:shadow-md"
+            className="relative p-8 border border-[#E2E8F0] bg-white overflow-hidden group hover:border-brand transition-all duration-300 "
           >
             <div
-              className="absolute top-0 left-0 w-full h-1 rounded-t-2xl"
+              className="absolute top-0 left-0 w-full h-1"
               style={{ background: "linear-gradient(90deg, #e61435, transparent)" }}
             />
             <span className="text-brand font-semibold text-xs tracking-widest mb-4 block">
@@ -70,10 +70,10 @@ export default function Vision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewport}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="relative p-8 rounded-2xl border border-[rgba(217,119,6,0.2)] bg-white overflow-hidden group hover:border-gold transition-all duration-300 hover:shadow-md"
+            className="relative p-8 border border-[rgba(217,119,6,0.2)] bg-white overflow-hidden group hover:border-gold transition-all duration-300 "
           >
             <div
-              className="absolute top-0 left-0 w-full h-1 rounded-t-2xl"
+              className="absolute top-0 left-0 w-full h-1"
               style={{ background: "linear-gradient(90deg, #D97706, transparent)" }}
             />
             <span className="text-gold font-semibold text-xs tracking-widest mb-4 block">
@@ -100,7 +100,7 @@ export default function Vision() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center p-6 rounded-2xl bg-white border border-[#E2E8F0] hover:border-brand transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="text-center p-6 bg-white border border-[#E2E8F0] hover:border-brand transition-all duration-300 hover:-translate-y-1 "
               >
                 <div className="w-12 h-12 rounded-xl bg-[rgba(242,13,73,0.07)] flex items-center justify-center mx-auto mb-4">
                   <Icon className="text-brand" size={22} />

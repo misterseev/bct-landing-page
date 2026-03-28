@@ -84,6 +84,7 @@ export default function About() {
               ໂດຍສອນຫຼັກສູດປະລິນຍາຕີ້ຊັ້ນສູງ (Higher Diploma) ລະຍະເວລາ 3 ປີ — ສ້າງທັກສະດ້ານເທັກນິກ, ຄວາມສາມາດດ້ານພາສາ
               ແລະ ສະຕິພົນທາງສັງຄົມໃຫ້ແກ່ຜູ້ສຳເລັດການສຶກສາ ເພື່ອໃຫ້ສາມາດເຕີບໂຕໃນຕະຫຼາດແຮງງານສະໄໝໃໝ່ໄດ້ຢ່າງໝັ້ນຄົງ.
             </p>
+            {/* <a href="/profile" className="underline hover:text-brand">ໂປຣຟາຍ ບີຊີທີ</a> */}
           </motion.div>
 
           <div className="space-y-4">
@@ -92,7 +93,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-6 rounded-2xl border border-[#E2E8F0] bg-surface hover:border-brand transition-colors duration-300 group"
+              className="p-6 border border-[#E2E8F0] bg-surface hover:border-brand transition-colors duration-300 group"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
@@ -112,7 +113,7 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="p-6 rounded-2xl border border-[rgba(217,119,6,0.2)] bg-surface hover:border-gold transition-colors duration-300 group"
+              className="p-6 border border-[rgba(217,119,6,0.2)] bg-surface hover:border-gold transition-colors duration-300 group"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[rgba(217,119,6,0.08)] flex items-center justify-center shrink-0 group-hover:bg-[rgba(217,119,6,0.15)] transition-colors">
@@ -150,7 +151,7 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={viewport}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="p-6 rounded-2xl bg-surface border border-[#E2E8F0] hover:border-brand transition-all duration-300 hover:-translate-y-1 group text-center"
+                  className="p-6 bg-surface border border-[#E2E8F0] hover:border-brand transition-all duration-300 hover:-translate-y-1 group text-center"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-[rgba(242,13,73,0.06)] flex items-center justify-center mx-auto mb-4 group-hover:bg-[rgba(242,13,73,0.12)] transition-colors">
                     <Icon className="text-brand" size={26} />

@@ -65,7 +65,7 @@ export default function NotificationsPage() {
               <li key={item.id}>
                 <Link
                   href={`/notifications/${item.id}`}
-                  className="group block rounded-sm border border-[#E2E8F0] bg-white overflow-hidden transition-all hover:border-brand/25 "
+                  className="group block border border-[#E2E8F0] bg-white overflow-hidden transition-all hover:border-brand/25 "
                 >
                   <div className="flex flex-col sm:flex-row sm:items-stretch">
                     <div className="relative aspect-16/10 sm:aspect-auto sm:w-[min(42%,280px)] shrink-0 bg-[#EEF2F6]">
@@ -76,6 +76,16 @@ export default function NotificationsPage() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, 280px"
                       />
+                      {/* Priority Badge */}
+                      <div className="absolute top-2 left-2">
+                        <span className={`inline-flex items-center justify-center px-3 py-1 text-xs font-bold ${
+                          item.priority === "HIGH" ? "bg-red-500 text-white" :
+                          item.priority === "MEDIUM" ? "bg-yellow-500 text-white" :
+                          "bg-green-500 text-white"
+                        }`}>
+                          {item.priority === "HIGH" ? "ສຳຄັນທີ່ສຸດ" : item.priority === "MEDIUM" ? "ທຳມະດາ" : "ທົ່ວໄປ"}
+                        </span>
+                      </div>
                     </div>
                     <div className="flex flex-1 flex-col p-6 md:p-8">
                       <div className="flex flex-wrap items-center gap-2 text-sm text-slate mb-3">

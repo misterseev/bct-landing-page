@@ -74,13 +74,13 @@ function BookCard({ book }: { book: Book }) {
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}
-      className="flex flex-col w-[120px] shrink-0 cursor-pointer group"
+      className="flex flex-col w-30 shrink-0 cursor-pointer group"
     >
-      <div className={`relative w-full h-[160px] rounded-lg ${book.cover} shadow-md overflow-hidden mb-2`}>
+      <div className={`relative w-full h-40 rounded-xs ${book.cover} shadow-md overflow-hidden mb-2`}>
         <div className="absolute inset-0 flex items-center justify-center opacity-20">
           <BookOpen className="h-10 w-10 text-white" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
       </div>
       <p className="text-xs font-semibold text-navy leading-snug line-clamp-2 group-hover:text-brand transition-colors">
         {book.title}
@@ -189,7 +189,7 @@ export default function LibraryPage() {
             <div className="relative">
               <button
                 onClick={() => setCatOpen((o) => !o)}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm font-medium text-navy-mid hover:border-brand/40 transition min-w-[140px] justify-between"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E2E8F0] bg-white text-sm font-medium text-navy-mid hover:border-brand/40 transition min-w-35 justify-between"
               >
                 {category}
                 <ChevronDown className={`h-4 w-4 text-slate-400 transition-transform ${catOpen ? "rotate-180" : ""}`} />
@@ -283,7 +283,7 @@ export default function LibraryPage() {
           </div>
 
           {/* ─── Book List Table ─── */}
-          <div className="bg-white rounded-2xl border border-[#E2E8F0] overflow-hidden">
+          <div className="bg-white border border-[#E2E8F0] overflow-hidden">
             <div className="overflow-x-auto">
               <div className="min-w-180">
                 {/* Table header */}

@@ -89,7 +89,7 @@ export default function WhyBCT() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="relative p-8 rounded-2xl border border-[#E2E8F0] bg-surface hover:border-brand transition-all duration-300 hover:-translate-y-1 group overflow-hidden hover:shadow-md"
+                className="relative p-8 border border-[#E2E8F0] bg-surface hover:border-brand transition-all duration-300 hover:-translate-y-1 group overflow-hidden"
               >
                 <span className="absolute top-4 right-6 font-black text-5xl text-[rgba(242,13,74,0.13)] select-none">
                   0{index + 1}
@@ -112,7 +112,7 @@ export default function WhyBCT() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 p-8 md:p-12 rounded-3xl border border-[rgba(217,119,6,0.2)] bg-surface text-center relative overflow-hidden"
+          className="mt-16 p-8 md:p-12 border border-[rgba(217,119,6,0.2)] bg-surface text-center relative overflow-hidden"
         >
           <div
             className="absolute inset-0 pointer-events-none"
@@ -125,11 +125,11 @@ export default function WhyBCT() {
           <div className="relative z-10">
             <div className="text-gold text-4xl mb-4" aria-hidden="true">&ldquo;</div>
             <blockquote className="font-bold text-xl md:text-2xl text-navy max-w-3xl mx-auto leading-snug text-balance mb-6">
-              ການຮຽນທີ່ {SITE_NAME_SHORT} ຊ່ວຍໃຫ້ຂ້າພະເຈົ້າມີທັກສະປະຕິບັດ ແລະ ຄວາມໝັ້ນໃຈໃນການເຂົ້າວຽກດ້ານພັດທະນາຊອບແວເປັນຄັ້ງທຳອິດກ່ອນສຳເລັດການສຶກສາ —
+              ການຮຽນທີ່ {SITE_NAME_SHORT} ຊ່ວຍໃຫ້ຂ້າພະເຈົ້າມີທັກສະປະຕິບັດ ແລະ ຄວາມໝັ້ນໃຈໃນການເຂົ້າວຽກດ້ານພັດທະນາຊອບແວເປັນຄັ້ງທຳອິດກ່ອນສຳເລັດການສຶກສາ
               ການຝຶກໃນຫ້ອງປະຕິບັດມີຄວາມໝາຍຄວາມເປັນຕົວຈິງຫຼາຍ.
             </blockquote>
             <div className="text-slate text-sm">
-              — ຜູ້ສຳເລັດການສຶກສາ, ຮຸ່ນ 2023 · ນັກພັດທະນາຊອບແວ
+              ຜູ້ສຳເລັດການສຶກສາ, ຮຸ່ນ 2023 · ນັກພັດທະນາຊອບແວ
             </div>
           </div>
         </motion.div>

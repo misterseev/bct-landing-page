@@ -9,7 +9,9 @@
       "Read(//usr/local/bin/**)",
       "Read(//Users/mac/.nvm/versions/node/**)",
       "Bash(export NVM_DIR=\"$HOME/.nvm\")",
-      "Bash(source \"$NVM_DIR/nvm.sh\")"
+      "Bash(source \"$NVM_DIR/nvm.sh\")",
+      "Bash(wait)",
+      "Read(//tmp/**)"
     ]
   }
 }

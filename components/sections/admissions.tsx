@@ -100,7 +100,7 @@ export default function Admissions() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-10"
           >
-            <div className="p-8 rounded-2xl border border-[#E2E8F0] bg-white">
+            <div className="p-8 border border-[#E2E8F0] bg-white">
               <h3 className="font-bold text-navy text-xl mb-6">
                 ເງື່ອນໄຂການຮັບສະໝັກ
               </h3>
@@ -152,7 +152,7 @@ export default function Admissions() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewport}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden"
+            className="border border-[#E2E8F0] bg-white overflow-hidden"
           >
             <div className="px-8 py-6 border-b border-[#E2E8F0] bg-[rgba(242,13,73,0.03)]">
               <h3 className="font-bold text-navy text-xl">ແບບຟອມສະໝັກຮຽນ</h3>

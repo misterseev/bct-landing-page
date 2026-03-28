@@ -90,7 +90,7 @@ export default function ContactFooter() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={viewport}
                       transition={{ duration: 0.5, delay: i * 0.1 }}
-                      className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-[#E2E8F0] hover:border-brand transition-colors"
+                      className="flex items-start gap-4 p-5 bg-surface border border-[#E2E8F0] hover:border-brand transition-colors"
                     >
                       <div className="w-12 h-12 rounded-xl bg-[rgba(242,13,73,0.06)] flex items-center justify-center shrink-0">
                         <Icon className="text-brand" size={20} />
@@ -147,7 +147,7 @@ export default function ContactFooter() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className=" rounded-md overflow-hidden aspect-4/3 relative"
+              className=" overflow-hidden aspect-4/3 relative"
             >
               <BctMapDynamic />
             </motion.div>
@@ -160,7 +160,7 @@ export default function ContactFooter() {
           <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                {/* <div className="w-10 h-10 rounded-lg bg-brand flex items-center justify-center">
+                {/* <div className="w-10 h-10 bg-brand flex items-center justify-center">
                   <span className="font-black text-white text-sm">BCT</span>
                 </div> */}
                 <div>
@@ -181,7 +181,7 @@ export default function ContactFooter() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="w-9 h-9 rounded-lg bg-navy-light flex items-center justify-center text-slate-400 hover:text-brand transition-colors"
+                      className="w-9 h-9 bg-navy-light flex items-center justify-center text-slate-400 hover:text-brand transition-colors"
                     >
                       <Icon size={16} />
                     </a>

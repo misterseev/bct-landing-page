@@ -53,10 +53,10 @@ export default function Schedule() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="p-6 rounded-2xl border border-[#E2E8F0] bg-white relative overflow-hidden group hover:border-brand transition-all duration-300 hover:shadow-md"
+              className="p-6 border border-[#E2E8F0] bg-white relative overflow-hidden group hover:border-brand transition-all duration-300"
             >
               <div
-                className="absolute top-0 left-0 w-full h-1 rounded-t-2xl"
+                className="absolute top-0 left-0 w-full h-1"
                 style={{ background: "linear-gradient(90deg, #e61435, transparent)" }}
               />
               <div className="flex items-center gap-3 mb-4">
@@ -84,10 +84,10 @@ export default function Schedule() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="p-6 rounded-2xl border border-[rgba(217,119,6,0.2)] bg-white relative overflow-hidden group hover:border-gold transition-all duration-300 hover:shadow-md"
+              className="p-6 border border-[rgba(217,119,6,0.2)] bg-white relative overflow-hidden group hover:border-gold transition-all duration-300"
             >
               <div
-                className="absolute top-0 left-0 w-full h-1 rounded-t-2xl"
+                className="absolute top-0 left-0 w-full h-1"
                 style={{ background: "linear-gradient(90deg, #D97706, transparent)" }}
               />
               <div className="flex items-center gap-3 mb-4">
@@ -116,7 +116,7 @@ export default function Schedule() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewport}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-2 rounded-2xl border border-[#E2E8F0] bg-white overflow-hidden"
+            className="lg:col-span-2 border border-[#E2E8F0] bg-white overflow-hidden"
           >
             <div className="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between">
               <div>
