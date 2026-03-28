@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, Newspaper, Bell, Briefcase, FileText } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { HOME, ROUTES, SITE_NAME_SHORT } from "@/lib/routes"
+import { HOME, ROUTES, SITE_NAME_SHORT } from "@/config/site"
 
 type NavChild = {
   label: string
@@ -22,6 +22,7 @@ type NavLink = {
 const navLinks: NavLink[] = [
   { label: "ກ່ຽວກັບ ບີຊີທີ", href: HOME.about },
   { label: "ຫ້ອງຮຽນ", href: HOME.classrooms },
+  { label: "ຫ້ອງສະໝຸດ", href: ROUTES.library },
   { label: "ການຮຽນ-ການສອນ", href: HOME.schedule },
   {
     label: "ຂ່າວສານ",
@@ -47,7 +48,7 @@ const navLinks: NavLink[] = [
       },
       {
         label: "ສື່ມວນຊົນ ແລະ ບົດຄວາມ",
-        href: HOME.media,
+        href: ROUTES.communitys,
         description: "ບົດຄວາມ ວິທີຮຽນ ສະຖິຕິ ແລະ ຂໍ້ມູນທີ່ນໍາສະເໜີ",
         icon: FileText,
       },
@@ -66,6 +67,7 @@ export default function Navbar() {
   const [megaOpenHref, setMegaOpenHref] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
   const [hoveredChild, setHoveredChild] = useState<string | null>(null)
+  const [hoveredMobileChild, setHoveredMobileChild] = useState<string | null>(null)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const openMega = useCallback((href: string) => {
@@ -102,8 +104,8 @@ export default function Navbar() {
   const activeMega = navLinks.find((l) => l.href === megaOpenHref && l.children?.length)
   /** ພື້ນຫຼັງຂາວ: scroll, mega menu, ຫຼື ບໍ່ແມ່ນໜ້າຫຼັກ (ເຊັ່ນ /notifications) */
   const navOnLightBg = !isHomePage || scrolled || Boolean(megaOpenHref)
-  const navTextClass = navOnLightBg ? "text-[#334155]" : "text-white"
-  const navHoverClass = navOnLightBg ? "hover:text-[#e61435]" : "hover:text-white/90"
+  const navTextClass = navOnLightBg ? "text-navy-mid" : "text-white"
+  const navHoverClass = "hover:text-brand"
 
   return (
     <motion.header
@@ -122,18 +124,18 @@ export default function Navbar() {
           whileHover={{ scale: 1.04 }}
           transition={{ type: "spring", stiffness: 400, damping: 20 }}
         >
-          <div className="w-14 h-10 rounded-lg bg-[#e61435] flex items-center justify-center">
+          {/* <div className="w-14 h-10 rounded-lg bg-brand flex items-center justify-center">
             <span className="font-black text-white text-sm leading-none">BCT</span>
-          </div>
+          </div> */}
           <div className="hidden sm:block">
             <div
-              className={`font-bold text-base leading-tight transition-colors ${
+              className={`font-bold text-lg leading-tight transition-colors ${
                 navOnLightBg ? "text-gray-700" : "text-white"
               }`}
             >
               {SITE_NAME_SHORT}
             </div>
-            <div className={`text-xs leading-tight ${navOnLightBg ? "text-[#64748B]" : "text-white/85"}`}>
+            <div className={`text-xs leading-tight ${navOnLightBg ? "text-slate" : "text-white/85"}`}>
               ເພື່ອການສຶກສາດ້ານໄອທີ
             </div>
           </div>
@@ -149,22 +151,18 @@ export default function Navbar() {
                   className="relative"
                   onMouseEnter={() => openMega(link.href)}
                   onMouseLeave={scheduleCloseMega}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400, damping: 20 }}
                 >
                   <button
                     type="button"
                     aria-expanded={megaOpenHref === link.href}
                     aria-haspopup="true"
-                    className={`flex items-center cursor-pointer gap-1 px-3 py-2 text-sm font-bold rounded-md transition-colors hover:text-[#e61435] ${navTextClass} ${navHoverClass} ${
-                      megaOpenHref === link.href ? "text-[#e61435]" : ""
+                    className={`flex items-center cursor-pointer gap-1 px-3 py-2 text-sm font-bold rounded-md transition-colors hover:text-brand ${navTextClass} ${navHoverClass} ${
+                      megaOpenHref === link.href ? "text-brand" : ""
                     }`}
                   >
-                    {link.label}
-                    <ChevronDown
-                      className={`h-4 w-4 shrink-0 transition-transform ${megaOpenHref === link.href ? "rotate-180" : ""}`}
-                      aria-hidden
-                    />
+                    {link.label} 
                   </button>
                 </motion.li>
               )
@@ -173,12 +171,12 @@ export default function Navbar() {
               <motion.li
                 key={link.href}
                 onMouseEnter={() => setMegaOpenHref(null)}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
                 <a
                   href={link.href}
-                  className={`block px-3 py-2 text-sm font-bold rounded-md transition-colors hover:text-[#e61435] ${navTextClass} ${navHoverClass}`}
+                  className={`block px-3 py-2 text-sm font-bold rounded-md transition-colors hover:text-brand ${navTextClass} ${navHoverClass}`}
                 >
                   {link.label}
                 </a>
@@ -189,8 +187,8 @@ export default function Navbar() {
 
         <button
           className={`md:hidden p-2 rounded-md transition-colors ${
-            navOnLightBg ? "text-[#0F172A]" : "text-white"
-          } hover:bg-[rgba(242,13,73,0.08)]`}
+            navOnLightBg ? "text-navy" : "text-white"
+          } hover:bg-brand-dim`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="ເປີດ ຫຼື ປິດເມນູນຳທາງ"
         >
@@ -229,7 +227,7 @@ export default function Navbar() {
                       {isHovered && (
                         <motion.div
                           layoutId="mega-card-highlight"
-                          className="absolute inset-0 rounded-xl border border-[#e61435]/50 bg-[rgba(242,13,74,0.02)]"
+                          className="absolute inset-0 rounded-xl border border-brand/50 bg-brand/5 pointer-events-none"
                           transition={{ type: "spring", stiffness: 350, damping: 28, mass: 0.6 }}
                         />
                       )}
@@ -247,11 +245,11 @@ export default function Navbar() {
                       >
                         {child.label}
                       </motion.span>
-                      <p className="relative mt-2 text-xs md:text-sm text-[#64748B] leading-relaxed line-clamp-4">
+                      <p className="relative mt-2 text-xs md:text-sm text-slate leading-relaxed line-clamp-4">
                         {child.description}
                       </p>
                       <motion.span
-                        className="relative mt-3 text-xs font-semibold text-[#e61435]"
+                        className="relative mt-3 text-xs font-semibold text-brand"
                         animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 4 }}
                         transition={{ duration: 0.2 }}
                       >
@@ -290,7 +288,7 @@ export default function Navbar() {
                         onClick={() =>
                           setMobileExpanded((prev) => (prev === link.href ? null : link.href))
                         }
-                        className="flex w-full items-center justify-between px-4 py-3 text-left text-[#0F172A] hover:bg-[rgba(242,13,73,0.06)] rounded-md font-medium"
+                        className="flex w-full items-center justify-between px-4 py-3 text-left text-navy hover:bg-[rgba(242,13,73,0.06)] rounded-md font-medium"
                         aria-expanded={mobileExpanded === link.href}
                       >
                         {link.label}
@@ -319,14 +317,23 @@ export default function Navbar() {
                                       setIsOpen(false)
                                       setMobileExpanded(null)
                                     }}
-                                    className="flex gap-3 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-3 active:bg-white"
+                                    onMouseEnter={() => setHoveredMobileChild(child.href)}
+                                    onMouseLeave={() => setHoveredMobileChild(null)}
+                                    className="relative flex gap-3 rounded-lg border border-transparent p-3 active:bg-white"
                                   >
-                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[rgba(242,13,73,0.08)] text-[#e61435]">
+                                    {hoveredMobileChild === child.href && (
+                                      <motion.div
+                                        layoutId="mobile-card-highlight"
+                                        className="absolute inset-0 rounded-lg border border-brand/50 bg-brand/5 pointer-events-none"
+                                        transition={{ type: "spring", stiffness: 350, damping: 28, mass: 0.6 }}
+                                      />
+                                    )}
+                                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand/10 text-brand">
                                       <Icon className="h-4 w-4" />
                                     </div>
                                     <div>
-                                      <div className="font-semibold text-sm text-[#0F172A]">{child.label}</div>
-                                      <p className="mt-1 text-xs text-[#64748B] leading-relaxed">{child.description}</p>
+                                      <div className="font-semibold text-sm text-navy">{child.label}</div>
+                                      <p className="mt-1 text-xs text-slate leading-relaxed">{child.description}</p>
                                     </div>
                                   </a>
                                 )
@@ -340,7 +347,7 @@ export default function Navbar() {
                     <a
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="block px-4 py-3 text-[#64748B] hover:text-[#e61435] hover:bg-[rgba(242,13,73,0.06)] rounded-md transition-colors font-medium"
+                      className="block px-4 py-3 text-slate hover:text-brand hover:bg-[rgba(242,13,73,0.06)] rounded-md transition-colors font-medium"
                     >
                       {link.label}
                     </a>
@@ -356,7 +363,7 @@ export default function Navbar() {
                 <a
                   href={HOME.admissions}
                   onClick={() => setIsOpen(false)}
-                  className="block text-center px-5 py-3 bg-[#e61435] text-white  font-bold rounded-lg hover:bg-[#c40038] transition-colors"
+                  className="block text-center px-5 py-3 bg-brand text-white  font-bold rounded-lg hover:bg-brand-hover transition-colors"
                 >
                   ສະໝັກຮຽນ
                 </a>

@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { motion } from "framer-motion"
-import { HOME } from "@/lib/routes"
+import { HOME } from "@/config/site"
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -46,7 +46,7 @@ export default function Hero() {
             {...fadeUp(0.2)}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/40 bg-white/15 backdrop-blur-sm text-white text-xs font-semibold"
           >
-            <span className="w-2 h-2 rounded-full bg-[#e61435] animate-pulse shrink-0" />
+            <span className="w-2 h-2 rounded-full bg-brand animate-pulse shrink-0" />
             ຍຶດໝັ້ນຄຸນນະພາບການສຶກສາອັນດັບໜຶ່ງ
           </motion.div>
 
@@ -77,7 +77,7 @@ export default function Hero() {
           >
             <a
               href="/admissions"
-              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 sm:px-8 sm:py-4 bg-[#e61435] text-white font-bold text-sm sm:text-base rounded-xl hover:bg-[#c40038] transition-all duration-200 shadow-lg shadow-[rgba(242,13,73,0.4)] hover:shadow-[rgba(242,13,73,0.6)] hover:-translate-y-0.5 active:translate-y-0"
+              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 sm:px-8 sm:py-4 bg-brand text-white font-bold text-sm sm:text-base rounded-xl hover:bg-brand-hover transition-all duration-200 shadow-lg shadow-[rgba(242,13,73,0.4)] hover:shadow-[rgba(242,13,73,0.6)] hover:-translate-y-0.5 active:translate-y-0"
             >
               ສະໝັກຮຽນ
               <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
@@ -98,7 +98,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.8 }}
         href={HOME.about}
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-[#64748B] hover:text-[#e61435] transition-colors flex flex-col items-center gap-1 z-10"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 text-slate hover:text-brand transition-colors flex flex-col items-center gap-1 z-10"
         aria-label="ເລື່ອນລົງສູ່ພາກກ່ຽວກັບພວກເຮົາ"
       >
         <span className="text-[10px] sm:text-xs font-medium tracking-widest opacity-60">ເລື່ອນລົງ</span>

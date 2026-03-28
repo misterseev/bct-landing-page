@@ -2,7 +2,7 @@
 
 import { BookOpen, FlaskConical, Users, Compass, Briefcase, TrendingUp } from "lucide-react"
 import { motion } from "framer-motion"
-import { SITE_NAME_SHORT } from "@/lib/routes"
+import { SITE_NAME_SHORT } from "@/config/site"
 
 const reasons = [
   {
@@ -67,14 +67,14 @@ export default function WhyBCT() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16"
         >
           <div>
-            <span className="text-[#e61435] font-semibold text-sm">
+            <span className="text-brand font-semibold text-sm">
               ເປັນຫຍັງຄວນເລືອກພວກເຮົາ
             </span>
-            <h2 className="font-black text-4xl md:text-5xl text-[#0F172A] mt-3 text-balance max-w-lg">
+            <h2 className="font-black text-4xl md:text-5xl text-navy mt-3 text-balance max-w-lg">
               ຈຸດເດັ່ນຂອງ {SITE_NAME_SHORT}
             </h2>
           </div>
-          <p className="text-[#64748B] max-w-md leading-relaxed lg:text-right text-balance">
+          <p className="text-slate max-w-md leading-relaxed lg:text-right text-balance">
             ພວກເຮົາມີຄວາມມຸ່ງໝັ້ນທີ່ຈະກຽມຄວາມພ້ອມໃຫ້ທ່ານສຳລັບອາຊີບດ້ານເທັກໂນໂລຊີໃນຊີວິດຈິງ — ນີ້ແມ່ນສິ່ງທີ່ແຕກຕ່າງຂອງສະຖາບັນເຮົາ.
           </p>
         </motion.div>
@@ -89,19 +89,19 @@ export default function WhyBCT() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewport}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="relative p-8 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#e61435] transition-all duration-300 hover:-translate-y-1 group overflow-hidden hover:shadow-md"
+                className="relative p-8 rounded-2xl border border-[#E2E8F0] bg-surface hover:border-brand transition-all duration-300 hover:-translate-y-1 group overflow-hidden hover:shadow-md"
               >
                 <span className="absolute top-4 right-6 font-black text-5xl text-[rgba(242,13,74,0.13)] select-none">
                   0{index + 1}
                 </span>
 
                 <div className="w-12 h-12 rounded-xl bg-[rgba(242,13,73,0.06)] flex items-center justify-center mb-5 group-hover:bg-[rgba(242,13,73,0.12)] transition-colors">
-                  <Icon className="text-[#e61435]" size={22} />
+                  <Icon className="text-brand" size={22} />
                 </div>
-                <h3 className="font-bold text-[#0F172A] text-lg mb-3 text-balance">
+                <h3 className="font-bold text-navy text-lg mb-3 text-balance">
                   {reason.title}
                 </h3>
-                <p className="text-[#64748B] text-sm leading-relaxed">{reason.description}</p>
+                <p className="text-slate text-sm leading-relaxed">{reason.description}</p>
               </motion.div>
             )
           })}
@@ -112,7 +112,7 @@ export default function WhyBCT() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewport}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-16 p-8 md:p-12 rounded-3xl border border-[rgba(217,119,6,0.2)] bg-[#F8FAFC] text-center relative overflow-hidden"
+          className="mt-16 p-8 md:p-12 rounded-3xl border border-[rgba(217,119,6,0.2)] bg-surface text-center relative overflow-hidden"
         >
           <div
             className="absolute inset-0 pointer-events-none"
@@ -123,12 +123,12 @@ export default function WhyBCT() {
             aria-hidden="true"
           />
           <div className="relative z-10">
-            <div className="text-[#D97706] text-4xl mb-4" aria-hidden="true">&ldquo;</div>
-            <blockquote className="font-bold text-xl md:text-2xl text-[#0F172A] max-w-3xl mx-auto leading-snug text-balance mb-6">
+            <div className="text-gold text-4xl mb-4" aria-hidden="true">&ldquo;</div>
+            <blockquote className="font-bold text-xl md:text-2xl text-navy max-w-3xl mx-auto leading-snug text-balance mb-6">
               ການຮຽນທີ່ {SITE_NAME_SHORT} ຊ່ວຍໃຫ້ຂ້າພະເຈົ້າມີທັກສະປະຕິບັດ ແລະ ຄວາມໝັ້ນໃຈໃນການເຂົ້າວຽກດ້ານພັດທະນາຊອບແວເປັນຄັ້ງທຳອິດກ່ອນສຳເລັດການສຶກສາ —
               ການຝຶກໃນຫ້ອງປະຕິບັດມີຄວາມໝາຍຄວາມເປັນຕົວຈິງຫຼາຍ.
             </blockquote>
-            <div className="text-[#64748B] text-sm">
+            <div className="text-slate text-sm">
               — ຜູ້ສຳເລັດການສຶກສາ, ຮຸ່ນ 2023 · ນັກພັດທະນາຊອບແວ
             </div>
           </div>

@@ -2,15 +2,15 @@
 
 import { MapPin, Phone, Mail, Facebook, Youtube, Globe } from "lucide-react"
 import { motion } from "framer-motion"
-import { AnimatedDotPattern } from "./animated-dot-pattern"
-import { HOME, ROUTES, SITE_NAME_SHORT } from "@/lib/routes"
+import { AnimatedDotPattern } from "../animated-dot-pattern"
+import { HOME, ROUTES, SITE_NAME_SHORT } from "@/config/site"
 import dynamic from "next/dynamic"
 
-const BctMapDynamic = dynamic(() => import("./bct-map"), {
+const BctMapDynamic = dynamic(() => import("../sections/bct-map"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-[#F8FAFC]">
-      <div className="text-[#64748B] text-sm">ກຳລັງໂຫຼດແຜນທີ່...</div>
+    <div className="w-full h-full flex items-center justify-center bg-surface">
+      <div className="text-slate text-sm">ກຳລັງໂຫຼດແຜນທີ່...</div>
     </div>
   ),
 })
@@ -67,10 +67,10 @@ export default function ContactFooter() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-[#e61435] font-semibold text-sm tracking-widest">
+            <span className="text-brand font-semibold text-sm tracking-widest">
               ຕິດຕໍ່ສອບຖາມ
             </span>
-            <h2 className="font-black text-4xl md:text-5xl text-[#0F172A] mt-3 text-balance">
+            <h2 className="font-black text-4xl md:text-5xl text-navy mt-3 text-balance">
               ຂໍ້ມູນຕິດຕໍ່ພວກເຮົາ
             </h2>
             <p className=" mt-4 max-w-2xl mx-auto leading-relaxed font-semibold">
@@ -90,24 +90,24 @@ export default function ContactFooter() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={viewport}
                       transition={{ duration: 0.5, delay: i * 0.1 }}
-                      className="flex items-start gap-4 p-5 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#e61435] transition-colors"
+                      className="flex items-start gap-4 p-5 rounded-2xl bg-surface border border-[#E2E8F0] hover:border-brand transition-colors"
                     >
                       <div className="w-12 h-12 rounded-xl bg-[rgba(242,13,73,0.06)] flex items-center justify-center shrink-0">
-                        <Icon className="text-[#e61435]" size={20} />
+                        <Icon className="text-brand" size={20} />
                       </div>
                       <div>
-                        <div className="text-[#64748B] text-xs font-semibold tracking-wide mb-1">
+                        <div className="text-slate text-xs font-semibold tracking-wide mb-1">
                           {item.label}
                         </div>
                         {item.href ? (
                           <a
                             href={item.href}
-                            className="text-[#0F172A] font-semibold hover:text-[#e61435] transition-colors"
+                            className="text-navy font-semibold hover:text-brand transition-colors"
                           >
                             {item.value}
                           </a>
                         ) : (
-                          <span className="text-[#0F172A] font-semibold">{item.value}</span>
+                          <span className="text-navy font-semibold">{item.value}</span>
                         )}
                       </div>
                     </motion.div>
@@ -121,7 +121,7 @@ export default function ContactFooter() {
                 viewport={viewport}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <div className="text-[#64748B] text-xs font-semibold tracking-widest mb-4">
+                <div className="text-slate text-xs font-semibold tracking-widest mb-4">
                   ຕິດຕາມພວກເຮົາ
                 </div>
                 <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export default function ContactFooter() {
                         key={social.label}
                         href={social.href}
                         aria-label={social.label}
-                        className="w-12 h-12 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#64748B] hover:text-[#e61435] hover:border-[#e61435] transition-all duration-200 hover:-translate-y-0.5"
+                        className="w-12 h-12 rounded-xl bg-surface border border-[#E2E8F0] flex items-center justify-center text-slate hover:text-brand hover:border-brand transition-all duration-200 hover:-translate-y-0.5"
                       >
                         <Icon size={20} />
                       </a>
@@ -155,22 +155,22 @@ export default function ContactFooter() {
         </div>
       </section>
 
-      <footer className="bg-[#0F172A] border-t border-[#1E293B]">
+      <footer className="bg-navy border-t border-navy-light">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
           <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-[#e61435] flex items-center justify-center">
+                {/* <div className="w-10 h-10 rounded-lg bg-brand flex items-center justify-center">
                   <span className="font-black text-white text-sm">BCT</span>
-                </div>
+                </div> */}
                 <div>
-                  <div className="font-bold text-white text-sm leading-tight">
+                  <div className="font-bold text-white text-xl leading-tight">
                     {SITE_NAME_SHORT}
                   </div>
-                  <div className="text-[#94A3B8] text-xs">ເພື່ອການສຶກສາດ້ານໄອທີ</div>
+                  <div className="text-slate-400 text-xs">ເພື່ອການສຶກສາດ້ານໄອທີ</div>
                 </div>
               </div>
-              <p className="text-[#94A3B8] text-sm leading-relaxed">
+              <p className="text-slate-400 text-sm leading-relaxed">
                 ພັດທະນາບຸກຄະລາກອນດ້ານເທັກໂນໂລຊີໃຫ້ສປປ ລາວ ຜ່ານການສຶກສາທີ່ມີຄຸນນະພາບ ການຝຶກປະຕິບັດຈິງ ແລະ ຫຼັກສູດທີ່ສອດຄ່ອງກັບອຸດສາຫະກຳ
               </p>
               <div className="flex items-center gap-2">
@@ -181,7 +181,7 @@ export default function ContactFooter() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="w-9 h-9 rounded-lg bg-[#1E293B] flex items-center justify-center text-[#94A3B8] hover:text-[#e61435] transition-colors"
+                      className="w-9 h-9 rounded-lg bg-navy-light flex items-center justify-center text-slate-400 hover:text-brand transition-colors"
                     >
                       <Icon size={16} />
                     </a>
@@ -191,7 +191,7 @@ export default function ContactFooter() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white text-sm tracking-widest mb-5">
+              <h4 className="font-bold text-white mb-5">
                 ລິ້ງດ່ວນ
               </h4>
               <ul className="space-y-2">
@@ -199,9 +199,9 @@ export default function ContactFooter() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="text-[#94A3B8] text-sm hover:text-[#e61435] transition-colors"
+                      className="text-slate-400 text-sm hover:text-brand transition-colors"
                     >
-                      {link.label}
+                     {link.label}
                     </a>
                   </li>
                 ))}
@@ -209,7 +209,7 @@ export default function ContactFooter() {
             </div>
 
             <div>
-              <h4 className="font-bold text-white text-sm tracking-widest mb-5">
+              <h4 className="font-bold text-white mb-5">
                 ສາຂາວິຊາ
               </h4>
               <ul className="space-y-2">
@@ -221,15 +221,15 @@ export default function ContactFooter() {
                   <li key={p}>
                     <a
                       href={HOME.classrooms}
-                      className="text-[#94A3B8] text-sm hover:text-[#e61435] transition-colors"
+                      className="text-slate-400 text-sm hover:text-brand transition-colors"
                     >
                       {p}
                     </a>
                   </li>
                 ))}
                 <li className="pt-4">
-                  <div className="text-[#94A3B8] text-xs">ລະດັບການສຶກສາ</div>
-                  <div className="text-[#D97706] font-semibold text-sm mt-1">
+                  <div className="text-slate-100 font-bold">ລະດັບການສຶກສາ</div>
+                  <div className="text-gold font-semibold text-sm mt-1">
                     ປະລິນຍາຕີ້ຊັ້ນສູງ · ຊັ້ນສູງ
                   </div>
                 </li>
@@ -237,9 +237,9 @@ export default function ContactFooter() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-[#1E293B] flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[#94A3B8] text-sm">
-              &copy; {new Date().getFullYear()} ວິທະຍາໄລ ບີຊີທີ ເພື່ອການສຶກສາດ້ານໄອທີ — ສະຫງວນລິຂະສິດ
+          <div className="pt-8 border-t border-navy-light flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-slate-400 text-sm">
+              &copy; {new Date().getFullYear()} ວິທະຍາໄລ ບີຊີທີ ເພື່ອການສຶກສາດ້ານໄອທີ — ພັດທະນາໂດຍ "MisterSee VANG"
             </p>
             <p className="text-[#475569] text-xs">
               ວິທະຍາໄລ ບີຊີທີ ເພື່ອການສຶກສາດ້ານເທັກໂນໂລຊີ · ສາທາລະນະລັດ ປະຊາທິປະໄຕ ປະຊາຊົນລາວ

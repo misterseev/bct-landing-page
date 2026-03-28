@@ -28,7 +28,7 @@ export default function ScrollToTop() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           aria-label="ກັບຂຶ້ນເທິງ"
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-[#e61435] text-white shadow-lg shadow-[#e61435]/30 flex items-center justify-center cursor-pointer"
+          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-brand text-white shadow-lg shadow-brand/30 flex items-center justify-center cursor-pointer"
         >
           <ChevronUp size={20} strokeWidth={2.5} />
         </motion.button>

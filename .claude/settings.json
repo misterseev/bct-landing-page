@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(NODE_OPTIONS='--max-old-space-size=4096' npx next build)",
+      "Bash(grep -r chart-[1-5] /Users/mac/Documents/MisterSee/bct-landing-page/app /Users/mac/Documents/MisterSee/bct-landing-page/components)",
+      "Bash(source ~/.nvm/nvm.sh)",
+      "Bash(nvm use:*)",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/mac/.nvm/versions/node/**)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash(source \"$NVM_DIR/nvm.sh\")"
+    ]
+  }
+}

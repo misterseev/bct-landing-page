@@ -2,7 +2,7 @@
 
 import { Target, Eye, Lightbulb, Users, Award, ShieldCheck } from "lucide-react"
 import { motion } from "framer-motion"
-import { SITE_NAME_SHORT } from "@/lib/routes"
+import { SITE_NAME_SHORT } from "@/config/site"
 
 const values = [
   {
@@ -54,10 +54,10 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-[#e61435] font-semibold text-sm tracking-widest">
+          <span className="text-brand font-semibold text-sm tracking-widest">
             ປະຫວັດຄວາມເປັນມາ
           </span>
-          <h2 className="font-black text-4xl md:text-5xl text-[#0F172A] mt-3 text-balance">
+          <h2 className="font-black text-4xl md:text-5xl text-navy mt-3 text-balance">
             ກ່ຽວກັບ {SITE_NAME_SHORT}
           </h2>
         </motion.div>
@@ -71,15 +71,15 @@ export default function About() {
             className="space-y-6"
           >
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-[rgba(217,119,6,0.06)] border border-[rgba(217,119,6,0.2)]">
-              <span className="w-2 h-2 rounded-full bg-[#D97706]" />
-              <span className="text-[#D97706]  font-semibold text-sm">ຈຸດເລີ່ມຕົ້ນຂອງສະຖາບັນ</span>
+              <span className="w-2 h-2 rounded-full bg-gold" />
+              <span className="text-gold  font-semibold text-sm">ຈຸດເລີ່ມຕົ້ນຂອງສະຖາບັນ</span>
             </div>
-            <p className="text-[#64748B] leading-relaxed text-base">
+            <p className="text-slate leading-relaxed text-base">
               {SITE_NAME_SHORT} ຖືກສ້າງຕັ້ງດ້ວຍວິໄສທັດອັນຊັດເຈນ ເພື່ອໃຫ້ການສຶກສາດ້ານເທັກໂນໂລຊີທີ່ມີຄຸນນະພາບເຂົ້າເຖິງນັກສຶກສາໃນທົ່ວ ສປປ ລາວ.
               ຮັບຮູ້ວ່າຕະຫຼາດແຮງງານດ້ານໄອທີໃນອາຊີຕາເວັນອອກສຽງໃຕ້ມີຄວາມຕ້ອງການສູງ, ຜູ້ຮ່ວມກຳເນີດໄດ້ຈັດຕັ້ງສະຖາບັນໃຫ້ເປັນສະພານກາງລະຫວ່າງການຮຽນໃນຫ້ອງຮຽນ
               ແລະ ການປະຕິບັດຕົວຈິງໃນອຸດສາຫະກຳ.
             </p>
-            <p className="text-[#64748B] leading-relaxed text-base">
+            <p className="text-slate leading-relaxed text-base">
               ຈາກຈຸດເລີ່ມຕົ້ນອັນອ່ອນໂຍນ, ສະຖາບັນໄດ້ເຕີບໃຫຍ່ເປັນສະຖາບັນອາຊີວະສຶກສາທີ່ໄດ້ຮັບຄວາມເຄົາລົບ,
               ໂດຍສອນຫຼັກສູດປະລິນຍາຕີ້ຊັ້ນສູງ (Higher Diploma) ລະຍະເວລາ 3 ປີ — ສ້າງທັກສະດ້ານເທັກນິກ, ຄວາມສາມາດດ້ານພາສາ
               ແລະ ສະຕິພົນທາງສັງຄົມໃຫ້ແກ່ຜູ້ສຳເລັດການສຶກສາ ເພື່ອໃຫ້ສາມາດເຕີບໂຕໃນຕະຫຼາດແຮງງານສະໄໝໃໝ່ໄດ້ຢ່າງໝັ້ນຄົງ.
@@ -92,15 +92,15 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-6 rounded-2xl border border-[#E2E8F0] bg-[#F8FAFC] hover:border-[#e61435] transition-colors duration-300 group"
+              className="p-6 rounded-2xl border border-[#E2E8F0] bg-surface hover:border-brand transition-colors duration-300 group"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[rgba(242,13,73,0.08)] flex items-center justify-center shrink-0 group-hover:bg-[rgba(242,13,73,0.15)] transition-colors">
-                  <Target className="text-[#e61435]" size={22} />
+                <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
+                  <Target className="text-brand" size={22} />
                 </div>
                 <div>
-                  <h3 className=" font-bold text-[#0F172A] text-lg mb-2">ພາລະກິດ</h3>
-                  <p className="text-[#64748B] leading-relaxed text-sm">
+                  <h3 className=" font-bold text-navy text-lg mb-2">ພາລະກິດ</h3>
+                  <p className="text-slate leading-relaxed text-sm">
                     ຈັດຫາການສຶກສາດ້ານໄອທີທີ່ມີຄຸນນະພາບ ແລະ ເຂົ້າເຖິງໄດ້ງ່າຍ ເພື່ອເສີມສ້າງນັກສຶກສາໃນ ສປປ ລາວ
                     ໃຫ້ມີອາຊີບທີ່ໝັ້ນຄົງ ແລະ ມີສ່ວນຮ່ວມພັດທະນາປະເທດຊາດອຍ່າງມີປະໂຫຍດ.
                   </p>
@@ -112,15 +112,15 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewport}
               transition={{ duration: 0.5, delay: 0.35 }}
-              className="p-6 rounded-2xl border border-[rgba(217,119,6,0.2)] bg-[#F8FAFC] hover:border-[#D97706] transition-colors duration-300 group"
+              className="p-6 rounded-2xl border border-[rgba(217,119,6,0.2)] bg-surface hover:border-gold transition-colors duration-300 group"
             >
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[rgba(217,119,6,0.08)] flex items-center justify-center shrink-0 group-hover:bg-[rgba(217,119,6,0.15)] transition-colors">
-                  <Eye className="text-[#D97706]" size={22} />
+                  <Eye className="text-gold" size={22} />
                 </div>
                 <div>
-                  <h3 className=" font-bold text-[#0F172A] text-lg mb-2">ວິໄສທັດ</h3>
-                  <p className="text-[#64748B] leading-relaxed text-sm">
+                  <h3 className=" font-bold text-navy text-lg mb-2">ວິໄສທັດ</h3>
+                  <p className="text-slate leading-relaxed text-sm">
                     ກາຍເປັນວິທະຍາໄລອາຊີວະສຶກສາດ້ານໄອທີຊັ້ນນໍາໃນພາກພື້ນ — ໄດ້ຮັບການຍອມຮັນໃນດ້ານຄຸນນະພາບການສອນ,
                     ນະວັດຕະກຳທາງວິຊາການ ແລະ ການຜະລິດບຸກຄະລາກອນທີ່ພ້ອມຮັບໃຊ້ໃນເສດຖະກິດດິຈິຕອລ.
                   </p>
@@ -136,7 +136,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewport}
             transition={{ duration: 0.5 }}
-            className="font-bold text-2xl text-center text-[#0F172A] mb-10"
+            className="font-bold text-2xl text-center text-navy mb-10"
           >
             ຄ່ານຳໃຊ້ຫຼັກຂອງພວກເຮົາ
           </motion.h3>
@@ -150,13 +150,13 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={viewport}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="p-6 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] hover:border-[#e61435] transition-all duration-300 hover:-translate-y-1 group text-center"
+                  className="p-6 rounded-2xl bg-surface border border-[#E2E8F0] hover:border-brand transition-all duration-300 hover:-translate-y-1 group text-center"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-[rgba(242,13,73,0.06)] flex items-center justify-center mx-auto mb-4 group-hover:bg-[rgba(242,13,73,0.12)] transition-colors">
-                    <Icon className="text-[#e61435]" size={26} />
+                    <Icon className="text-brand" size={26} />
                   </div>
-                  <h4 className="font-bold text-[#0F172A] text-lg mb-2">{value.title}</h4>
-                  <p className="text-[#64748B] text-sm leading-relaxed">{value.description}</p>
+                  <h4 className="font-bold text-navy text-lg mb-2">{value.title}</h4>
+                  <p className="text-slate text-sm leading-relaxed">{value.description}</p>
                 </motion.div>
               )
             })}

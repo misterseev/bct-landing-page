@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { AnimatedDotPattern } from "@/components/animated-dot-pattern"
-import { featuredActivityCards, type ActivityFeatureCard } from "@/lib/activities-gallery"
+import { featuredActivityCards, type ActivityFeatureCard } from "@/data/activities"
 import { ArrowLeft, CalendarDays } from "lucide-react"
 
 const DISPLAY_LIMIT = 5
@@ -43,7 +43,7 @@ function ActivityAlternatingCard({
       }}
     >
       <div
-        className={`relative mb-4 h-[220px] w-full shrink-0 overflow-hidden bg-[#EEF2F6] md:h-[320px] md:w-[min(560px,48%)] ${imageFloatClass}`}
+        className={`relative mb-4 h-55 w-full shrink-0 overflow-hidden bg-[#EEF2F6] md:h-80 md:w-[min(560px,48%)] ${imageFloatClass}`}
       >
         <Image
           src={item.image}
@@ -60,15 +60,15 @@ function ActivityAlternatingCard({
         className={`inline-flex w-fit rounded-full px-3 py-1 text-xs font-semibold tracking-wide ${
           item.kind === "ທ່ອງທ່ຽວ"
             ? "bg-[rgba(217,119,6,0.12)] text-[#B45309] border border-[rgba(217,119,6,0.25)]"
-            : "bg-[rgba(242,13,73,0.08)] text-[#e61435] border border-[rgba(242,13,73,0.2)]"
+            : "bg-brand-dim text-brand border border-[rgba(242,13,73,0.2)]"
         }`}
       >
         {item.kind}
       </span>
 
-      <h3 className="mt-3 text-xl font-bold text-[#0F172A] md:text-2xl text-balance">{item.title}</h3>
+      <h3 className="mt-3 text-xl font-bold text-navy md:text-2xl text-balance">{item.title}</h3>
 
-      <div className="mt-3 space-y-3 text-[#64748B] leading-relaxed text-base md:text-[17px]">
+      <div className="mt-3 space-y-3 text-slate leading-relaxed text-base md:text-[17px]">
         {item.description.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}
@@ -98,7 +98,7 @@ export function ActivitiesTravelView() {
           >
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#64748B] hover:text-[#e61435] transition-colors mb-8"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate hover:text-brand transition-colors mb-8"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden />
               ກັບໜ້າຫຼັກ
@@ -107,7 +107,7 @@ export function ActivitiesTravelView() {
 
           <div className="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
             <motion.div
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(242,13,73,0.1)] text-[#e61435]"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[rgba(242,13,73,0.1)] text-brand"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ type: "spring", stiffness: 260, damping: 22, delay: 0.12 }}
@@ -121,13 +121,13 @@ export function ActivitiesTravelView() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: easeOut, delay: 0.15 }}
             >
-              <p className="text-[#e61435] font-semibold text-sm tracking-wide mb-2">ຊີວິດນັກສຶກສາ</p>
-              <h1 className="font-black text-3xl md:text-4xl text-[#0F172A] text-balance leading-tight">
+              <p className="text-brand font-semibold text-sm tracking-wide mb-2">ຊີວິດນັກສຶກສາ</p>
+              <h1 className="font-black text-3xl md:text-4xl text-navy text-balance leading-tight">
                 ກິດຈະກຳ ແລະ ທ່ອງທ່ຽວ
               </h1>
-              <p className="mt-4 text-[#64748B] text-base md:text-lg leading-relaxed">
+              <p className="mt-4 text-slate text-base md:text-lg leading-relaxed">
                 ກິດຈະກຳໃນສະຖາບັນ ແລະ ການທ່ອງທ່ຽວທັດສະນະສຶກສາຂອງນັກສຶກສາ{" "}
-                <span className="font-semibold text-[#334155]">ວິທະຍາໄລ ບີຊີທີ</span>  ຮູບພາບຢູ່ດ້ານເທິງ
+                <span className="font-semibold text-navy-mid">ວິທະຍາໄລ ບີຊີທີ</span>  ຮູບພາບຢູ່ດ້ານເທິງ
                 (ສະຫຼັບຊ້າຍ-ຂວາຕາມລຳດັບ); ຕົວໜັງສືເລີ່ມຢູ່ຂ້າງຮູບ ແລະ ລົງໃຕ້ຮູບເຕັມຄວາມກວ້າງເມື່ອເນື້ອຫາຍາວ.
               </p>
             </motion.div>

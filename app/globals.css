@@ -50,6 +50,16 @@
   --font-display: var(--font-montserrat), var(--font-noto-sans-lao), 'Montserrat', sans-serif;
   --font-lao: var(--font-noto-sans-lao), 'Noto Sans Lao', sans-serif;
   --font-mono: 'Courier New', monospace;
+  /* BCT Brand — ໃຊ້ໄດ້ຜ່ານ Tailwind utilities: text-brand, bg-brand, etc. */
+  --color-brand: #e61435;
+  --color-brand-hover: #c40038;
+  --color-brand-dim: rgba(242, 13, 73, 0.08);
+  --color-navy: #0F172A;
+  --color-navy-light: #1E293B;
+  --color-navy-mid: #334155;
+  --color-slate: #64748B;
+  --color-gold: #D97706;
+  --color-surface: #F8FAFC;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -69,12 +79,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
+--radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);

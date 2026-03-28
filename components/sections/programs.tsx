@@ -43,7 +43,7 @@ const classrooms = [
     height: 1200,
   },
   {
-    src: "/images/classrooms/class-room-07.jpg",
+    src: "/images/classrooms/class-room-12.jpg",
     alt: "ຫ້ອງສະໝຸດ ແລະ ພື້ນທີ່ຮຽນ",
     width: 1100,
     height: 750,
@@ -63,6 +63,12 @@ const classrooms = [
   {
     src: "/images/classrooms/class-room-10.jpg",
     alt: "ນັກຮຽນນຳສະເໜີໂປຣເຈັກ",
+    width: 950,
+    height: 1100,
+  },
+  {
+    src: "/images/communitys/mistersee-popular.jpg",
+    alt: "ມອບໃບສະນີຍະບັດແກ່ ທ່ານ ຊີ ວ່າງ",
     width: 950,
     height: 1100,
   },
@@ -111,13 +117,13 @@ export default function Classrooms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="text-[#e61435] font-semibold text-sm tracking-widest">
+          <span className="text-brand font-semibold text-sm tracking-widest">
             ສິ່ງອຳນວຍຄວາມສະດວກ
           </span>
-          <h2 className="font-black text-4xl md:text-5xl text-[#0F172A] mt-3 text-balance">
+          <h2 className="font-black text-4xl md:text-5xl text-navy mt-3 text-balance">
             ຫ້ອງຮຽນຂອງພວກເຮົາ
           </h2>
-          <p className="mt-4 text-[#64748B] text-base max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-slate text-base max-w-xl mx-auto leading-relaxed">
             ສຳຫຼວດສະພາບແວດລ້ອມການຮຽນຮູ້ທີ່ທັນສະໄໝ ພ້ອມອຸປະກອນ ແລະ ເຕັກໂນໂລຊີ ທີ່ຄົບຖ້ວນ
           </p>
         </motion.div>
@@ -141,7 +147,7 @@ export default function Classrooms() {
               <button
                 type="button"
                 onClick={() => setLightboxIndex(i)}
-                className="relative block w-full cursor-zoom-in overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e61435] focus-visible:ring-offset-2"
+                className="relative block w-full cursor-zoom-in overflow-hidden text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
                 aria-label={`ເບິ່ງຮູບໃຫຍ່: ${room.alt}`}
               >
                 <Image
@@ -179,7 +185,7 @@ export default function Classrooms() {
             <button
               type="button"
               onClick={closeLightbox}
-              className="absolute right-4 top-4 z-110 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="absolute right-4 top-4 z-110 cursor-pointer rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               aria-label="ປິດ"
             >
               <X size={22} strokeWidth={2} />

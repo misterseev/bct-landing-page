@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import localFont from 'next/font/local'
 import { Analytics } from '@vercel/analytics/next'
-import ScrollToTop from '@/components/scroll-to-top'
+import ScrollToTop from '@/components/layout/scroll-to-top'
 import './globals.css'
-import ContactFooter from '@/components/contact-footer'
+import ContactFooter from '@/components/layout/contact-footer'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -25,6 +25,7 @@ const notoSansLao = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bct.edu.la'),
   title: {
     default: 'ວິທະຍາໄລ ບີຊີທີ ເພື່ອການສຶກສາດ້ານໄອທີ',
     template: '%s | ວິທະຍາໄລ ບີຊີທີ',

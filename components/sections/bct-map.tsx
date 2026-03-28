@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react"
 import L from "leaflet"
 import "leaflet/dist/leaflet.css"
-import { SITE_NAME_SHORT } from "@/lib/routes"
+import { SITE_NAME_SHORT } from "@/config/site"
 
 const BCT_LOCATION: [number, number] = [18.453304604169016, 102.49931453041721]
 

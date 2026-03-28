@@ -20,8 +20,8 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react"
-import Navbar from "@/components/navbar"
-import { SITE_NAME_SHORT } from "@/lib/routes"
+import Navbar from "@/components/layout/navbar"
+import { SITE_NAME_SHORT } from "@/config/site"
 
 /* ─── Data ─────────────────────────────────────────────────────── */
 
@@ -107,14 +107,14 @@ function StepIndicator({ current }: { current: number }) {
                   <CheckCircle size={16} className="text-white" />
                 ) : (
                   <span
-                    className={`text-xs font-black ${active ? "text-[#e61435]" : "text-[#94A3B8]"}`}
+                    className={`text-xs font-black ${active ? "text-brand" : "text-slate-400"}`}
                   >
                     {i + 1}
                   </span>
                 )}
               </motion.div>
               <span
-                className={`text-[10px] font-semibold whitespace-nowrap ${active ? "text-[#e61435]" : done ? "text-[#64748B]" : "text-[#94A3B8]"
+                className={`text-[10px] font-semibold whitespace-nowrap ${active ? "text-brand" : done ? "text-slate" : "text-slate-400"
                   }`}
               >
                 {label}
@@ -142,13 +142,13 @@ function InputField({
 }: React.InputHTMLAttributes<HTMLInputElement> & { label: string; required?: boolean }) {
   return (
     <div className="space-y-1.5 w-full">
-      <label htmlFor={id} className="text-sm font-semibold text-[#334155]">
-        {label} {required && <span className="text-[#e61435]">*</span>}
+      <label htmlFor={id} className="text-sm font-semibold text-navy-mid">
+        {label} {required && <span className="text-brand">*</span>}
       </label>
       <input
         id={id}
         {...props}
-        className="w-full px-4 py-3 placeholder-[#94A3B8] focus:outline-none transition-all text-sm"
+        className="w-full px-4 py-3 placeholder-slate-400 focus:outline-none transition-all text-sm"
       />
     </div>
   )
@@ -196,11 +196,11 @@ export default function AdmissionsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F8FAFC]">
+    <main className="min-h-screen bg-surface">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-[#0F172A] pt-24 pb-20 md:pt-32 md:pb-28">
+      <section className="relative overflow-hidden bg-navy pt-24 pb-20 md:pt-32 md:pb-28">
         {/* bg decoration */}
         <div
           className="absolute inset-0 pointer-events-none"
@@ -228,8 +228,8 @@ export default function AdmissionsPage() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[rgba(230,20,53,0.15)] border border-[rgba(230,20,53,0.3)] mb-6"
             >
-              <Sparkles size={13} className="text-[#e61435]" />
-              <span className="text-[#e61435] text-xs font-bold tracking-widest">ຮັບສະໝັກຮຽນ</span>
+              <Sparkles size={13} className="text-brand" />
+              <span className="text-brand text-xs font-bold tracking-widest">ຮັບສະໝັກຮຽນ</span>
             </motion.div>
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
@@ -238,14 +238,14 @@ export default function AdmissionsPage() {
               className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight"
             >
               ເລີ່ມຕົ້ນ
-              <span className="text-[#e61435]"> ເສັ້ນທາງ</span>
+              <span className="text-brand"> ເສັ້ນທາງ</span>
               <br />ໃໝ່ຂອງທ່ານ
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-5 text-[#94A3B8] text-lg leading-relaxed max-w-xl"
+              className="mt-5 text-slate-400 text-lg leading-relaxed max-w-xl"
             >
               ສະໝັກຮຽນກັບ {SITE_NAME_SHORT} ວັນນີ້ — ຮຽນໃນສະພາບແວດລ້ອມທີ່ທັນສະໄໝ, ຄາດຄົນ ແລະ ມຸ່ງໄປສູ່ອາຊີບທີ່ໝັ້ນຄົງ.
             </motion.p>
@@ -261,11 +261,11 @@ export default function AdmissionsPage() {
             {stats.map(({ icon: Icon, value, label }) => (
               <div
                 key={label}
-                className="bg-[rgba(255,255,255,0.05)] border border-[rgba(255,255,255,0.08)] rounded-2xl px-5 py-4 flex flex-col gap-2"
+                className="bg-[rgba(255,255,255,0.05)] border-3 border-[rgba(255,255,255,0.2)] rounded-2xl px-5 py-4 flex flex-col gap-2"
               >
-                <Icon size={18} className="text-[#e61435]" />
+                <Icon size={32} className="text-brand" />
                 <div className="font-black text-2xl text-white">{value}</div>
-                <div className="text-[#64748B] text-xs leading-snug">{label}</div>
+                <div className="text-slate text-xs font-semibold leading-snug">{label}</div>
               </div>
             ))}
           </motion.div>
@@ -285,8 +285,8 @@ export default function AdmissionsPage() {
               className="rounded-2xl bg-white border border-[#E2E8F0] overflow-hidden"
             >
               <div className="px-6 py-5 border-b border-[#E2E8F0] bg-[rgba(230,20,53,0.02)]">
-                <h2 className="font-bold text-[#0F172A] text-lg">ສາຂາວິຊາ</h2>
-                <p className="text-[#64748B] text-sm mt-0.5">ເລືອກສາຂາທີ່ເໝາະກັບທ່ານ</p>
+                <h2 className="font-bold text-navy text-lg">ສາຂາວິຊາ</h2>
+                <p className="text-slate text-sm mt-0.5">ເລືອກສາຂາທີ່ເໝາະກັບທ່ານ</p>
               </div>
               <div className="p-4 space-y-3">
                 {programs.map((p) => {
@@ -311,8 +311,8 @@ export default function AdmissionsPage() {
                           <Icon size={18} style={{ color: active ? "#fff" : p.color }} />
                         </div>
                         <div className="min-w-0">
-                          <div className="font-bold text-sm text-[#0F172A]">{p.label}</div>
-                          <div className="text-xs text-[#64748B]">{p.sublabel}</div>
+                          <div className="font-bold text-sm text-navy">{p.label}</div>
+                          <div className="text-xs text-slate">{p.sublabel}</div>
                           <div className="flex flex-wrap gap-1.5 mt-2">
                             {p.tags.map((t) => (
                               <span
@@ -349,15 +349,15 @@ export default function AdmissionsPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="rounded-2xl bg-white border border-[#E2E8F0] p-6"
             >
-              <h3 className="font-bold text-[#0F172A] mb-4 flex items-center gap-2">
-                <CheckCircle size={16} className="text-[#e61435]" />
+              <h3 className="font-bold text-navy mb-4 flex items-center gap-2">
+                <CheckCircle size={16} className="text-brand" />
                 ເງື່ອນໄຂການຮັບສະໝັກ
               </h3>
               <ul className="space-y-2.5">
                 {requirements.map((r) => (
                   <li key={r} className="flex items-start gap-2.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#e61435] shrink-0 mt-2" />
-                    <span className="text-sm text-[#64748B] leading-relaxed">{r}</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-brand shrink-0 mt-2" />
+                    <span className="text-sm text-slate leading-relaxed">{r}</span>
                   </li>
                 ))}
               </ul>
@@ -370,7 +370,7 @@ export default function AdmissionsPage() {
               className="rounded-2xl bg-[#e8e2e541] p-6 flex items-start gap-4"
             >
               <div className="w-10 h-10 rounded-xl bg-[rgba(230,20,53,0.15)] flex items-center justify-center shrink-0">
-                <Clock size={18} className="text-[#e61435]" />
+                <Clock size={18} className="text-brand" />
               </div>
               <div>
                 <div className="font-bold text-sm">ຮັບສະໝັກຕະຫຼອດປີ</div>
@@ -401,16 +401,16 @@ export default function AdmissionsPage() {
                   transition={{ delay: 0.1, type: "spring", stiffness: 300, damping: 20 }}
                   className="w-20 h-20 rounded-full bg-[rgba(230,20,53,0.08)] flex items-center justify-center"
                 >
-                  <CheckCircle size={40} className="text-[#e61435]" />
+                  <CheckCircle size={40} className="text-brand" />
                 </motion.div>
                 <div>
-                  <h3 className="font-black text-2xl text-[#0F172A]">ໄດ້ຮັບໃບສະໝັກແລ້ວ!</h3>
-                  <p className="text-[#64748B] mt-2 leading-relaxed max-w-xs mx-auto text-sm">
+                  <h3 className="font-black text-2xl text-navy">ໄດ້ຮັບໃບສະໝັກແລ້ວ!</h3>
+                  <p className="text-slate mt-2 leading-relaxed max-w-xs mx-auto text-sm">
                     ຂອບໃຈທີ່ສົນໃຈ {SITE_NAME_SHORT}. ພວກເຮົາຈະຕິດຕໍ່ກັບທ່ານພາຍໃນ 2 ວັນເຮັດການ.
                   </p>
                 </div>
-                <div className="w-full bg-[#F8FAFC] rounded-2xl p-5 text-left space-y-2 mt-2">
-                  <div className="text-xs text-[#94A3B8] font-semibold tracking-widest mb-3">ສາຂາທີ່ເລືອກ</div>
+                <div className="w-full bg-surface rounded-2xl p-5 text-left space-y-2 mt-2">
+                  <div className="text-xs text-slate-400 font-semibold tracking-widest mb-3">ສາຂາທີ່ເລືອກ</div>
                   {selectedProgram && (() => {
                     const p = programs.find((x) => x.id === selectedProgram)!
                     const Icon = p.icon
@@ -420,8 +420,8 @@ export default function AdmissionsPage() {
                           <Icon size={16} style={{ color: p.color }} />
                         </div>
                         <div>
-                          <div className="font-bold text-sm text-[#0F172A]">{p.label}</div>
-                          <div className="text-xs text-[#64748B]">{p.level} · {p.duration}</div>
+                          <div className="font-bold text-sm text-navy">{p.label}</div>
+                          <div className="text-xs text-slate">{p.level} · {p.duration}</div>
                         </div>
                       </div>
                     )
@@ -429,7 +429,7 @@ export default function AdmissionsPage() {
                 </div>
                 <a
                   href="/"
-                  className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#e61435] hover:underline"
+                  className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-brand hover:underline"
                 >
                   ກັບໄປໜ້າຫຼັກ <ArrowRight size={14} />
                 </a>
@@ -439,17 +439,17 @@ export default function AdmissionsPage() {
                 {/* Form header */}
                 <div className="px-6 sm:px-8 pt-8 pb-6 border-b border-[#F1F5F9]">
                   <div className="flex items-center gap-3 mb-1">
-                    <div className="w-10 h-8 rounded-lg bg-[#e61435] flex items-center justify-center">
+                    <div className="w-10 h-8 rounded-lg bg-brand flex items-center justify-center">
                       <span className="font-black text-white text-xs">BCT</span>
                     </div>
-                    <span className="text-xs font-bold text-[#64748B] tracking-widest">ແບບຟອມສະໝັກຮຽນ</span>
+                    <span className="text-xs font-bold text-slate tracking-widest">ແບບຟອມສະໝັກຮຽນ</span>
                   </div>
-                  <h2 className="font-black text-xl text-[#0F172A] mt-3">
+                  <h2 className="font-black text-xl text-navy mt-3">
                     {step === 0 && "ເລືອກສາຂາທີ່ສົນໃຈ"}
                     {step === 1 && "ຂໍ້ມູນສ່ວນຕົວ"}
                     {step === 2 && "ຂໍ້ມູນຕິດຕໍ່"}
                   </h2>
-                  <p className="text-[#94A3B8] text-sm mt-1">
+                  <p className="text-slate-400 text-sm mt-1">
                     {step === 0 && "ເລືອກ 1 ສາຂາທີ່ທ່ານຕ້ອງການ"}
                     {step === 1 && "ກອກຂໍ້ມູນຕາມເອກະສານຕົວຈິງ"}
                     {step === 2 && "ພວກເຮົາຈະໃຊ້ຂໍ້ມູນນີ້ຕິດຕໍ່ທ່ານ"}
@@ -502,13 +502,13 @@ export default function AdmissionsPage() {
                                   <Icon size={22} style={{ color: active ? "#fff" : p.color }} />
                                 </motion.div>
                                 <div className="flex-1 min-w-0">
-                                  <div className="font-bold text-[#0F172A] text-sm">{p.label}</div>
-                                  <div className="text-xs text-[#64748B]">{p.sublabel}</div>
+                                  <div className="font-bold text-navy text-sm">{p.label}</div>
+                                  <div className="text-xs text-slate">{p.sublabel}</div>
                                   <div className="flex items-center gap-2 mt-1.5">
-                                    <span className="text-[10px] font-semibold text-[#94A3B8] bg-[#F1F5F9] px-2 py-0.5 rounded-full">
+                                    <span className="text-[10px] font-semibold text-slate-400 bg-[#F1F5F9] px-2 py-0.5 rounded-full">
                                       {p.duration}
                                     </span>
-                                    <span className="text-[10px] font-semibold text-[#94A3B8] bg-[#F1F5F9] px-2 py-0.5 rounded-full">
+                                    <span className="text-[10px] font-semibold text-slate-400 bg-[#F1F5F9] px-2 py-0.5 rounded-full">
                                       {p.level}
                                     </span>
                                   </div>
@@ -543,15 +543,15 @@ export default function AdmissionsPage() {
                         </div>
                         <InputField id="dob" label="ວັນເດືອນປີເກີດ" type="date" value={form.dob} onChange={set("dob")} />
                         <div className="space-y-1.5">
-                          <label htmlFor="gender" className="text-sm font-semibold text-[#334155]">
-                            ເພດ <span className="text-[#e61435]">*</span>
+                          <label htmlFor="gender" className="text-sm font-semibold text-navy-mid">
+                            ເພດ <span className="text-brand">*</span>
                           </label>
                           <select
                             id="gender"
                             required
                             value={form.gender}
                             onChange={set("gender")}
-                            className="w-full px-4 py-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] text-[#0F172A] focus:outline-none focus:border-[#e61435] focus:ring-2 focus:ring-[rgba(230,20,53,0.12)] transition-all text-sm appearance-none"
+                            className="w-full px-4 py-3 rounded-xl bg-surface border border-[#E2E8F0] text-navy focus:outline-none focus:border-brand focus:ring-2 focus:ring-[rgba(230,20,53,0.12)] transition-all text-sm appearance-none"
                           >
                             <option value="">-- ເລືອກ --</option>
                             <option value="male">ຊາຍ</option>
@@ -573,16 +573,16 @@ export default function AdmissionsPage() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="space-y-4"
                       >
-                        <div className="flex items-center gap-4 p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0]">
+                        <div className="flex items-center gap-4 p-3 rounded-xl bg-surface border border-[#E2E8F0]">
                           <InputField id="phone" label="ເບີໂທລະສັບຕິດຕໍ່" type="tel" placeholder="+856 20 XXX XXX XX" value={form.phone} onChange={set("phone")} />
                         </div>
-                        <div className="flex items-center gap-4 p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0]">
+                        <div className="flex items-center gap-4 p-3 rounded-xl bg-surface border border-[#E2E8F0]">
                           <InputField id="email" label="ອີເມວຂອງນັກສຶກສາ" type="email" placeholder="student@gmail.com" value={form.email} onChange={set("email")} />
                         </div>
-                        <div className="flex items-center gap-4 p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0]">
+                        <div className="flex items-center gap-4 p-3 rounded-xl bg-surface border border-[#E2E8F0]">
                           <InputField id="school" label="ໂຮງຮຽນທີ່ຈົບ ມ.7" type="text" placeholder="ຊື່ໂຮງຮຽນ" value={form.school} onChange={set("school")} />
                         </div>
-                        <div className="flex items-center gap-4 p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0]">
+                        <div className="flex items-center gap-4 p-3 rounded-xl bg-surface border border-[#E2E8F0]">
                           <InputField id="graduationYear" label="ປີຈົບຮຽນສາມັນ" type="text" placeholder="ປີຈົບຮຽນ" value={form.graduationYear} onChange={set("graduationYear")} />
                         </div>
                       </motion.div>
@@ -595,7 +595,7 @@ export default function AdmissionsPage() {
                       <button
                         type="button"
                         onClick={back}
-                        className="flex items-center gap-2 px-5 py-3 rounded-xl border border-[#E2E8F0] text-[#64748B] font-semibold text-sm hover:bg-[#F8FAFC] transition-colors"
+                        className="flex items-center gap-2 cursor-pointer px-5 py-3 rounded-xl border border-[#E2E8F0] text-slate font-semibold text-sm hover:bg-surface transition-colors"
                       >
                         <ChevronLeft size={16} /> ກັບຄືນ
                       </button>
@@ -607,7 +607,7 @@ export default function AdmissionsPage() {
                         disabled={step === 0 ? !canNext0 : !canNext1}
                         whileHover={step === 0 ? (canNext0 ? { scale: 1.02 } : {}) : (canNext1 ? { scale: 1.02 } : {})}
                         whileTap={{ scale: 0.98 }}
-                        className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[#e61435] text-white font-bold text-sm disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                        className="flex items-center gap-2 cursor-pointer px-6 py-3 rounded-xl bg-brand text-white font-bold text-sm disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                       >
                         ຕໍ່ໄປ <ChevronRight size={16} />
                       </motion.button>
@@ -618,7 +618,7 @@ export default function AdmissionsPage() {
                         disabled={!canSubmit}
                         whileHover={canSubmit ? { scale: 1.02 } : {}}
                         whileTap={{ scale: 0.98 }}
-                        className="flex items-center gap-2 px-6 py-3 rounded-xl bg-[#e61435] text-white font-bold text-sm disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-[0_4px_20px_rgba(230,20,53,0.3)]"
+                        className="flex items-center gap-2 cursor-pointer px-6 py-3 rounded-xl bg-brand text-white font-bold text-sm disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-[0_4px_20px_rgba(230,20,53,0.3)]"
                       >
                         <Send size={15} /> ສົ່ງໃບສະໝັກ
                       </motion.button>
