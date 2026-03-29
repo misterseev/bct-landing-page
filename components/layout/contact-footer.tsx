@@ -121,7 +121,7 @@ export default function ContactFooter() {
                 viewport={viewport}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <div className="text-slate text-xs font-semibold tracking-widest mb-4">
+                <div className="text-slate text-xs font-semibold mb-4">
                   ຕິດຕາມພວກເຮົາ
                 </div>
                 <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export default function ContactFooter() {
                         key={social.label}
                         href={social.href}
                         aria-label={social.label}
-                        className="w-12 h-12 rounded-xl bg-surface border border-[#E2E8F0] flex items-center justify-center text-slate hover:text-brand hover:border-brand transition-all duration-200 hover:-translate-y-0.5"
+                        className="w-12 h-12 bg-surface border border-[#E2E8F0] flex items-center justify-center text-slate hover:text-brand hover:border-brand transition-all duration-200 hover:-translate-y-0.5"
                       >
                         <Icon size={20} />
                       </a>
