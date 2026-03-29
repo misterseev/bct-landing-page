@@ -4,8 +4,17 @@ import { CommunityView } from "@/components/sections/community-view"
 import { SITE_NAME } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: `ຊຸມຊົນ ແລະ ກິດຈະກຳ | ${SITE_NAME}`,
-  description: `ຊຸມຊົນນັກສຶກສາ ແລະ ກິດຈະກຳສ້າງເຄືອຂ່າຍ ຂອງ ${SITE_NAME} — ການເຂົ້າຮ່ວມງານ, ໃບຢັ້ງຢືນ, ແລະ ການພັດທະນາທັກສະ`,
+  title: 'Community & Activities',
+  description:
+    'BCT College student community and networking events — participation, certificates, and skill development activities.',
+  openGraph: {
+    title: 'Community & Activities | BCT College',
+    description: 'Student community and networking events at BCT College.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://bct.edu.la/communitys',
+  },
 }
 
 export default function CommunityPage() {

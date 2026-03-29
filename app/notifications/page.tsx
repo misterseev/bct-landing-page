@@ -8,13 +8,16 @@ import { SITE_NAME } from "@/config/site"
 import { Bell, Calendar, ArrowLeft, ChevronRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: `ແຈ້ງການຈາກ ບີຊີທີ | ${SITE_NAME}`,
+  title: 'Announcements from BCT College',
   description:
-    `ປະກາດ ແລະ ແຈ້ງການສຳຄັນຈາກ ${SITE_NAME} — ກຳນົດການຮຽນ, ກິດຈະກຳ ແລະ ຂໍ້ມູນທີ່ກ່ຽວຂ້ອງກັບນັກສຶກສາ ແລະ ຜູ້ສົນໃຈ`,
+    'Important announcements and notices from BCT College — class schedules, activities, and information for students and prospective applicants.',
   openGraph: {
-    title: `ແຈ້ງການຈາກ ບີຊີທີ | ${SITE_NAME}`,
-    description: `ຕິດຕາມປະກາດ ແລະ ແຈ້ງການຈາກ ${SITE_NAME}`,
-    type: "website",
+    title: 'Announcements | BCT College',
+    description: 'Stay updated with announcements and notices from BCT College.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://bct.edu.la/notifications',
   },
 }
 

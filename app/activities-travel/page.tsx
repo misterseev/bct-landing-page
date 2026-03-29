@@ -4,13 +4,16 @@ import { ActivitiesTravelView } from "@/components/sections/activities-travel-vi
 import { SITE_NAME } from "@/config/site"
 
 export const metadata: Metadata = {
-  title: `ກິດຈະກຳ ແລະ ທ່ອງທ່ຽວ | ${SITE_NAME}`,
+  title: 'Activities & Field Trips',
   description:
-    `ຮູບພາບກິດຈະກຳ ແລະ ການທັດສະນະສຶກສາ ທ່ອງທ່ຽວຂອງນັກສຶກສາ ${SITE_NAME} — ຈັດງານ ແລະ ປະສົບການຮຽນຮູ້ນອກສະຖານທີ່`,
+    'BCT College student activities and educational field trips — events, excursions, and hands-on learning experiences outside the classroom.',
   openGraph: {
-    title: `ກິດຈະກຳ ແລະ ທ່ອງທ່ຽວ | ${SITE_NAME}`,
-    description: `ຕິດຕາມກິດຈະກຳ ແລະ ທ່ອງທ່ຽວຂອງ ${SITE_NAME}`,
-    type: "website",
+    title: 'Activities & Field Trips | BCT College',
+    description: 'Follow student activities and field trips at BCT College.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: 'https://bct.edu.la/activities-travel',
   },
 }
 

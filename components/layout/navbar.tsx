@@ -127,15 +127,15 @@ export default function Navbar() {
           {/* <div className="w-14 h-10 rounded-lg bg-brand flex items-center justify-center">
             <span className="font-black text-white text-sm leading-none">BCT</span>
           </div> */}
-          <div className="hidden sm:block">
+          <div className="">
             <div
-              className={`font-bold text-lg leading-tight transition-colors ${
-                navOnLightBg ? "text-gray-700" : "text-white"
+              className={`font-bold text-xl leading-tight transition-colors ${
+                navOnLightBg ? "text-brand" : "text-white"
               }`}
             >
               {SITE_NAME_SHORT}
             </div>
-            <div className={`text-xs leading-tight ${navOnLightBg ? "text-slate" : "text-white/85"}`}>
+            <div className={`text-xs hidden sm:block leading-tight ${navOnLightBg ? "text-slate" : "text-white/85"}`}>
               ເພື່ອການສຶກສາດ້ານໄອທີ
             </div>
           </div>

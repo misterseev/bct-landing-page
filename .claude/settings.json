@@ -11,7 +11,9 @@
       "Bash(export NVM_DIR=\"$HOME/.nvm\")",
       "Bash(source \"$NVM_DIR/nvm.sh\")",
       "Bash(wait)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(git -C /Users/mac/Documents/MisterSee/bct-landing-page log --oneline -5)",
+      "Bash(npx next:*)"
     ]
   }
 }
